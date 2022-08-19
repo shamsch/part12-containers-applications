@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-RUN npm run test 
+RUN CI=true npm run test 
 
 ENV REACT_APP_BACKEND_URL=http://localhost:3000
 
