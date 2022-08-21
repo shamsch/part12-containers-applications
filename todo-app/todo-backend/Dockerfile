@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:16
 
 WORKDIR /app
 
@@ -8,10 +8,10 @@ COPY package-lock.json .
 
 RUN npm ci 
 
-COPY . .
-
 ENV PORT 3000
 
-EXPOSE 3000
+COPY . .
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
+
+
