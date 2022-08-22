@@ -1,0 +1,18 @@
+<html>
+    <header>
+        <title>My App</title>
+    </header>
+    <body>
+        <h1>My App</h1>
+        <p>Ping backend</p>
+        <div id="ping">Click to ping</div>
+    </body>
+    <script>
+        const ping = async () => {
+            const response = await fetch('/ping');
+            const data = await response.json();
+            document.appendChild(document.createTextNode(data.message));
+        }
+        document.getElementById('ping').addEventListener('click', await ping);
+    </script>
+</html>

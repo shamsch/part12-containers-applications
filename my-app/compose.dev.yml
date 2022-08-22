@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+  backend: 
+    build: 
+      context: ./backend
+      dockerfile: dev.Dockerfile
+    
